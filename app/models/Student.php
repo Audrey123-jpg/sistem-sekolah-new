@@ -7,14 +7,14 @@ class Students extends Database
 {
     protected $table = 'students';
     // Fungsi untuk menampilkan Daftar Siswa
-    public function getStudents ()
+    public function getStudents()
     {
         $students = [];
-        $query = "SELECT * FROM 1this->table";
+        $query = "SELECT * FROM {$this->table}";
         $stmt = $this->connection->prepare($query);
-        $stmt = execute();
+        $stmt->execute();
         $result = $stmt->get_result();
-        while($student = $result->fetch_assoc()) {
+        while ($student = $result->fetch_assoc()) {
             $students[] = $student;
         }
         return $students;

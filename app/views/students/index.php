@@ -19,20 +19,33 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="px-4 py-2 text-left">1</td>
-                    <td class="px-4 py-2 text-left">Andi</td>
-                    <td class="px-4 py-2 text-left">11 TKJ 1</td>
-                    <td class="px-4 py-2 text-left">1234</td>
-                    <td class="px-4 py-2 text-left">08123456789</td>
+                <?php foreach($students as $index => $student): ?>
+                    <tr>
+                    <td class="px-4 py-2 text-left">
+                        <?= $index + 1?>
+                    </td>
+                    <td class="px-4 py-2 text-left">
+                        <?= $student['name']?>
+                    </td>
+                    <td class="px-4 py-2 text-left">
+                        <?= $student['class']?>
+                    </td>
+                    <td class="px-4 py-2 text-left">
+                        <?= $student['nis']?>
+                    </td>
+                    <td class="px-4 py-2 text-left">
+                        <?= $student['phone_number']?>
+                    </td>
                     <td class="px-4 py-2">
                         <div class="flex justify-center items-center gap-4">
-                            <a href="" class="text-green-500">Detail</a>
-                            <a href="" class="text-yellow-500">Edit</a>
+                            <a href="/student/<?= $student['id']?>" class="text-green-500">Detail</a>
+                            <a href="/student/<?= $student['id']?>/edit" class="text-yellow-500">Edit</a>
                             <a href="" class="text-red-500">Hapus</a>
                         </div>
                     </td>
                 </tr>
+                <?php endforeach?>
+                
             </tbody>
         </table>
     </div>
