@@ -2,6 +2,7 @@
 namespace App\Models;
 require_once '../app/core/Database.php';
 use App\Core\Database;
+use LDAP\Result;
 
 class Students extends Database
 {
@@ -18,6 +19,18 @@ class Students extends Database
             $students[] = $student;
         }
         return $students;
+    
+    }
+    // fungsi untuk menampilkan detail siswa
+    public function getStudent(int $id)
+    {
+        $query = "SELECT * FROM {$this-> table} WHERE id = ?";
+        $stmt = $this-> connection -> prepare($query);
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $student = $result->fetch_assoc();
+        return $student;
     }
 }
 ?>

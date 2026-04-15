@@ -38,8 +38,8 @@
                     </td>
                     <td class="px-4 py-2">
                         <div class="flex justify-center items-center gap-4">
-                            <a href="/student/<?= $student['id']?>" class="text-green-500">Detail</a>
-                            <a href="/student/<?= $student['id']?>/edit" class="text-yellow-500">Edit</a>
+                            <a href="/students/<?= $student['id']?>" class="text-green-500">Detail</a>
+                            <a href="/students/<?= $student['id']?>/edit" class="text-yellow-500">Edit</a>
                             <a href="" class="text-red-500">Hapus</a>
                         </div>
                     </td>

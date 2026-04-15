@@ -5,6 +5,7 @@ require_once '../app/models/Student.php';
 
 use App\Core\Controller;
 use App\Models\Students;
+use Student;
 class StudentController extends Controller
 {
     public function index()
@@ -23,7 +24,12 @@ class StudentController extends Controller
 
     public function show(string $id)
     {
-        $this->view('students.show');
+        $id = intval($id);
+        $studentModel = new Students();
+        $student = $studentModel->getStudent($id);
+        $this->view('students.show', [
+            'student' => $student
+        ]);
     }
 
     public function edit(string $id)
