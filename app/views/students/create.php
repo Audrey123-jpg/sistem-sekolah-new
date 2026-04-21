@@ -7,7 +7,7 @@
     <!-- Card Header End -->
     <!-- Card Content Start -->
     <div class="bg-white rounded-lg shadow">
-        <form action="" class="p-4 grid grid-cols-2 gap-4">
+        <form action="/students" method="POST"  class="p-4 grid grid-cols-2 gap-4">
             <div class="space-y-2">
                 <label class="font-bold block" for="name">Nama</label>
                 <input class="px-4 py-2 border rounded-lg w-full" type="text" id="name" name="name"
